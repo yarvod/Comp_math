@@ -1,2 +1,1 @@
-# Comp_math
-This is my computation mathematics tasks
+This is my computation mathematics tasks. I code it on python 3
