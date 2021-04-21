@@ -42,7 +42,6 @@
 # 
 # Другое определение сходимости через число Куранта $$K = a \tau / 2h$$
 
-# In[361]:
 
 
 import numpy as np 
@@ -51,14 +50,10 @@ import pandas as pd
 from mpl_toolkits.mplot3d import Axes3D
 
 
-# In[362]:
-
 
 def anal(x,t):
     return np.sin(4*t + x) - x**2 / 8
 
-
-# In[363]:
 
 
 def U_anal(N, L, x, t):   
@@ -77,13 +72,12 @@ def U_anal(N, L, x, t):
     return U_an
 
 
-# In[364]:
-
 
 def U_num(N, L, x, t):
     
     h = 1/L
     tau = 1/N
+    a = -4
     
     psi = np.sin(1+4*t) - 0.125
     psi_der1 = 4*np.cos(1+4*t)
@@ -120,9 +114,6 @@ def U_num(N, L, x, t):
     return U
 
 
-# In[365]:
-
-
 def result(L): 
     
     K = 0.25
@@ -150,8 +141,6 @@ def result(L):
     return table
 
 
-# In[366]:
-
 
 def result_double_grid(num): 
     pd.set_option('display.float_format', lambda x: '{:.5E}'.format(x))
@@ -176,23 +165,14 @@ def result_double_grid(num):
 
 # ## Результат на фиксированной сетке
 
-# In[345]:
-
-
 result(10)
 
-
 # ## Результат на последовательно удваиваемых сетках
-
-# In[360]:
-
 
 result_double_grid(5)
 
 
 # ## 3-х мерный график поверхности
-
-# In[357]:
 
 
 L = 40
@@ -236,8 +216,6 @@ plt.savefig('surface_2.png', dpi=400, quality=100)
 plt.show()
 
 
-# In[281]:
-
 
 # L = 10
 # k1 = 0.5
@@ -246,8 +224,6 @@ plt.show()
 # tau = 1/N
 # N
 
-
-# In[203]:
 
 
 # condition = abs(2*h/a)
@@ -258,8 +234,6 @@ plt.show()
 #         return 'Не устойчиво'
 # check()
 
-
-# In[ ]:
 
 
 
