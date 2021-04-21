@@ -186,7 +186,7 @@ t_a = []
 for i in range(N+1):
     for j in range(N+1):
         t_a.append(t[i])
-t_a = np.array(t_a)
+t_a = np.array(t_a, dtype = 'float')
 
 x_a = np.array([])
 for i in range(N+1):
